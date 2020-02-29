@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>卧龙浪士的空间</title>
+</head>
+
+<body>
+    <center id="info">将在5秒后自动跳转到首页</center>
+	<script language="javascript">
+		var num = 4; //倒计时的秒数
+		var URL = "http://201477.xyz/";
+		window.setTimeout("doUpdate()", 1000);
+		function doUpdate(){
+			if(num != 0){
+				document.getElementById('info').innerHTML = '将在'+num+'秒后自动跳转到首页' ;
+				num --;
+				window.setTimeout("doUpdate()", 1000);
+			}else{
+				num = 4;
+				window.location = URL;
+			}
+		}
+	</script>
+</body>
+</html>
