@@ -1,52 +1,63 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-  <!-- power by 卧龙浪士。QQ:2511989788。 -->
   <title>卧龙浪士的空间</title>
-  <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
-  <!-- <frameset framespacing="0" border="0" rows="0" frameborder="0"><frame name="main" src="http://pojdd.ys168.com/" scrolling="auto" noresize></frameset> -->
-  <link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
 <body>
   <iframe id="content1"  height="100%"  width="100%" left="0" top="0" src="http://pojdd.ys168.com"></iframe>
-  <!-- <object id="content1" data="./live2d/" width="100%" height="100%"></object> -->
-  <!-- <a href="http://pojdd.ys168.com/">小鱼阁</a> -->
-  
-  <script language="JavaScript" type="text/javascript">
-           window.location.href="http://201477.xyz/"; 
+  <style>
+    #live2dcanvas {
+      border: 0 !important;
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8"  src="L2Dwidget.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8"  src="L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+        L2Dwidget.init({"display": {
+            "superSample": 2,
+            "width": 200,
+            "height": 400,
+                "position": "right",
+                    "hOffset": 0,
+            "vOffset": 0
+              }
+        });
   </script>
-  
+   <script>//推送
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
   <script>
     document.getElementById("content1").height=document.documentElement.clientHeight-25;
     window.onresize = function(){
       document.getElementById("content1").height=document.documentElement.clientHeight-25;
     }
-    // window.location.href="http://pojdd.ys168.com/";
-    // document.location = 'http://pojdd.ys168.com/';
+   function jump(){
+        var count=sessionStorage["count"];
+        if(typeof(count)=='undefined'){
+            count=0;
+        }
+        count++;
+        sessionStorage["count"]=count;
+        if(count<2){
+    	    window.location.href='https://pojdd.gitee.io';
+        }else{
+            console.log('终止');
+        }
+    }
+    //setTimeout(jump,1);
   </script>
-  
-  <link rel="stylesheet" type="text/css" href="./assets/waifu.css">
-  
-
-	<div class="waifu" id="waifu" style="margin-right: 0%">
-		<div class="waifu-tips"></div>
-		<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-		<!-- <div class="waifu-tool">
-			<span class="fui-home"></span>
-			<span class="fui-chat"></span>
-			<span class="fui-eye"></span>
-			<span class="fui-user"></span>
-			<span class="fui-photo"></span>
-			<span class="fui-info-circle"></span>
-			<span class="fui-cross"></span>
-		</div> -->
-	</div>
-	<script src="./assets/live2d.js"></script>
-	<script src="./assets/waifu-tips.js"></script>
-	<script type="text/javascript">initModel()</script>
 </body>
 
 </html>
